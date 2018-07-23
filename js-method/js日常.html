@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    console.log('22' == 22) //true  转化为数字再做比较
+    console.log(0 == false) //true
+    console.log(null == undefined) //true
+    console.log(new Object() == new Object()) //false
+    console.log([1, 2] == [1, 2]) //false
+
+    // 类型检测
+    // type of  适合基本类型及function检测，遇到null失效
+    // instance of  适合自定义对象，也可以用来检测原生对象，在不同iframe和window间检测时失效
+    // Object.prototype.toString 适合内置对象和基本类型，遇到null和undefined失效
+    // construct
+    // duck type
+
+    console.log(typeof (100)) //number
+    console.log(typeof (true)) //boolean
+    console.log(typeof (function () {})) //function
+    console.log(typeof (undefined)) //undefined
+    console.log(typeof (new Object())) //object
+    console.log(typeof ([1, 2])) //object
+    console.log(typeof (NaN)) //number
+    console.log(typeof (null)) //object
+
+    var obj = {
+      content: [1, 2]
+    }
+
+    // ie678   Object.prototype.toString.apply(null) =》 "[object Object]"
+    console.log(Object.prototype.toString.apply(obj.content) === "[object Array]") //true
+    // Object.prototype.toString.apply([1, 2]) //"[object Array]"
+    // Object.prototype.toString.apply('str') //"[object String]"
+    // Object.prototype.toString.apply(1) //"[object Number]"
+    // Object.prototype.toString.apply(null) //"[object Null]"
+    // Object.prototype.toString.apply() //"[object Undefined]"
+    // Object.prototype.toString.apply(function () {}) //"[object Function]"
+    // Object.prototype.toString.apply(true) //"[object Boolean]"
+    // Object.prototype.toString.apply(new Object()) //"[object Object]"
+
+
+    
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

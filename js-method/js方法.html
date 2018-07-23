@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            // 冒泡排序
+            var arr = [10, 20, 1, 2];
+            var t;
+            for (var i = 0; i < arr.length; i++) {
+                for (j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        t = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = t;
+                    }
+                }
+            }
+            console.log(arr);  //[1, 2, 10, 20]
+
+            // 执行结果 undefined
+            /*  var a = 6;
+             setTimeout(function () {
+                 // alert(a);
+                 console.log(a)
+                 var a = 666;
+             }, 1000)
+             a = 66 */
+
+            //  五次5
+            /* const arr = [10, 11, 13, 13, 14];
+            for (var i = 0; i < arr.length; i++) {
+                setTimeout(function () {
+                    console.log(i)
+                }, 3000)
+            } */
+
+
+            /* const mockObj = {
+                foo: "bar",
+                func: function () {
+                    var self = this;
+                    console.log(this.foo);//bar
+                    console.log(self.foo);//bar
+                    (function () {
+                        console.log(this.foo);//undefined
+                        console.log(self.foo);//bar
+                    })()
+                }
+            }
+            mockObj.func() */
+
+
+        }
+    </script>
+    <style>
+        /* 方法好几种  未知宽高元素居中 */
+
+        .div {
+            width: 500px;
+            height: 500px;
+            background: pink;
+            position: relative;
+        }
+
+        .span1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: #fff;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div">
+        <span class="span1">上下左右垂直居中，位置宽高</span>
+    </div>
+</body>
+
+</html>
