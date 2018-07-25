@@ -33,7 +33,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     compress: true,
     host: HOST || config.dev.host,
     port: PORT || config.dev.port,
-    open: config.dev.autoOpenBrowser,
+    open: config.dev.autoOpenBrowser,//打开浏览器
     overlay: config.dev.errorOverlay
       ? { warnings: false, errors: true }
       : false,
