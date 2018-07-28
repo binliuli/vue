@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 1、charAt 返回指定索引出的字符
+    var str = "asdfghjk";
+    var s = str.charAt(1)
+    console.log(s) // s
+
+    // 2. 判断一个字符第一次出现在某个字符串的索引，如果包含返回它的索引，如果不包含返回-1
+    str.indexOf('q') //-1
+    str.indexOf('a') //0
+
+    //3.lastIndexOf 判断一个字符最后一次出现在某个字符串的索引，如果包含返回它的索引，如果不包含返回-1.
+
+    // 4.concat拼接2个字符串，返回一个新字符串，对原有字符串没有任何改变。
+    var str1 = "asdf";
+    var str2 = "qwer";
+    var str3 = str1.concat(str2);
+    console.log(str1, str2, str3); //asdf qwer asdfqwer
+
+    // 5.split 切割成数组
+    var strArr = 'hjdkl';
+    var newArr = strArr.split('');
+    console.log(newArr) //["h", "j", "d", "k", "l"]
+
+    // 6.substr(n,m) 从索引n开始，截取m个字符，将截取的字符返回，对原字符串没有任何改变。
+    var sub = 'abcdefghig';
+    console.log(sub.substr(2, 3)) //cde
+    console.log(sub) //abcdefghig
+
+    // 7.substring(n,m) 从索引n开始，截取到索引m,不包括m.将截取的字符返回,对原字符串没有任何改变.
+    // 会取start和end中较小的值为start,二者相等返回空字符串，任何一个参数为负数被替换为0(即该值会成为start参数）
+    var subs = 'abcdefghig';
+    console.log(subs.substring(3, 2)) // c  会取start和end中较小的值为start
+    console.log(subs.substring(2, 3)) // c  会取start和end中较小的值为start
+    console.log(subs.substring(2, 0)) // ab  任何一个参数为负数被替换为0(即该值会成为start参数）
+    console.log(subs.substring(0, 2)) // ab  任何一个参数为负数被替换为0(即该值会成为start参数）
+    console.log(subs) //abcdefghig
+
+    // 8.slice(n,m)   从索引n开始，截取到索引m,不包括m.将截取的字符返回,对原字符串没有任何改变.
+    // slice中的start如果为负数，会从尾部算起，-1表示倒数第一个，-2表示倒数第2个，此时end必须为负数，并且是大于start的负数，否则返回空字符串
+    // slice的end如果为负数，同样从尾部算起，如果其绝对值超过原字符串长度或者为0，返回空字符串
+    // slice()方法可以接受一或两个参数，即要返回项的起始和结束位置。在只有一个参数的情况下， slice()方法返回从该参数指定位置开始到当前数组末尾的所有项
+    var subsl = 'abcdefghig';
+    console.log(subsl.slice(2, 3)) // c
+    console.log(subsl.slice(-2, -1)) // i  start如果为负数，会从尾部算起，-1表示倒数第一个，-2表示倒数第2个，此时end必须为负数，并且是大于start的负数，否则返回空字符串
+    console.log(subsl.slice(2, -1)) // cdefghi  end如果为负数，同样从尾部算起，如果其绝对值超过原字符串长度或者为0，返回空字符串
+    console.log(subsl.slice(2, -9)) // null  end如果为负数，同样从尾部算起，如果其绝对值超过原字符串长度或者为0，返回空字符串
+    console.log(subsl) //abcdefghig
+
+    // 9.replace('a',1);  替换指定字符，返回替换后新的字符串，对原有字符串有改变。(第一个参数可以是正则表达式) 只能替换一次 ，配合正则模式修饰符g使用
+    var strR = 'aaaaee';　　
+    var reg = /a/g;　　
+    console.log(strR.replace(reg, 1)); //"1111ee"
+
+    // 10.match() 可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。把找到的字符放在数组里，返回一个数组。
+    var strM = 'aaaa3ed33';　　
+    var regm = /a/g;　　
+    strM.match(regm); //["a", "a", "a", "a"]
+
+    // ES6新加的字符串的方法
+
+    // 1.for..of  字符串的遍历器接口
+    for (let i of 'foo') {
+      console.log(i)
+    }
+    // "f"
+    // "o"
+    // "o"
+
+    // 2.at()  返回指定索引处的字符
+    'abc'.at(0) // "a"
+    // 5.includes()：返回布尔值，表示是否找到了参数字符串。这三个方法都支持第二个参数，表示开始搜索的位置。
+    // 6.startsWith()：返回布尔值，表示参数字符串是否在源字符串的头部。这三个方法都支持第二个参数，表示开始搜索的位置。
+    // 7.endsWith()：返回布尔值，表示参数字符串是否在源字符串的尾部。这三个方法都支持第二个参数，表示开始搜索的位置。
+    var s = 'Hello world!';
+
+    s.startsWith('world', 6) // true
+    s.endsWith('Hello', 5) // true
+    s.includes('Hello', 6) // false
+
+    // 8.repeat()  方法返回一个新字符串，表示将原字符串重复n次。
+
+    'x'.repeat(3) // "xxx"
+    'hello'.repeat(2) // "hellohello"
+    'na'.repeat(0) // ""
+
+    // 9.padStart()，padEnd()字符串补全长度的功能
+    //  padStart()用于头部补全
+
+    //  padEnd()用于尾部补全
+
+    // padStart和padEnd一共接受两个参数，第一个参数用来指定字符串的最小长度，第二个参数是用来补全的字符串。
+
+    'x'.padStart(5, 'ab') // 'ababx'
+    'x'.padStart(4, 'ab') // 'abax'
+
+    'x'.padEnd(5, 'ab') // 'xabab'
+    'x'.padEnd(4, 'ab') // 'xaba'
+    // 如果原字符串的长度，等于或大于指定的最小长度，则返回原字符串。
+
+    'xxx'.padStart(2, 'ab') // 'xxx'
+    'xxx'.padEnd(2, 'ab') // 'xxx'
+    // 如果用来补全的字符串与原字符串，两者的长度之和超过了指定的最小长度，则会截去超出位数的补全字符串。
+
+    'abc'.padStart(10, '0123456789')
+    // 如果省略第二个参数，默认使用空格补全长度。
+
+    'x'.padStart(4) // '   x'
+    'x'.padEnd(4) // 'x   '
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

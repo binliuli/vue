@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>对象的深拷贝</title>
+  <script>
+    // 1、万能的for循环实现对象的深拷贝
+    var obj = {
+      name: 'FungLeo',
+      sex: 'man',
+      old: '18'
+    }
+    var obj2 = copyObj(obj)
+
+    function copyObj(obj) {
+      let res = {}
+      for (var key in obj) {
+        res[key] = obj[key]
+      }
+      return res
+    }
+
+    // 2、转换成json再转换成对象实现对象的深拷贝
+    var obj = {
+      name: 'FungLeo',
+      sex: 'man',
+      old: '18'
+    }
+    var obj2 = JSON.parse(JSON.stringify(obj))
+
+    // 3、扩展运算符实现对象的深拷贝
+    var obj = {
+      name: 'FungLeo',
+      sex: 'man',
+      old: '18'
+    }
+    var { ...obj2
+    } = obj
+    obj.old = '22'
+    console.log(obj)
+    console.log(obj2)
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script>
+    // 数组的深拷贝
+    // 1、for循环是非常好用的。如果不知道高级方法，通过for循环能够完成我们大多数的需求。
+    var arr = [1, 2, 3, 4, 5]
+    var arr2 = copyArr(arr)
+
+    function copyArr(arr) {
+      let res = []
+      for (let i = 0; i < arr.length; i++) {
+        res.push(arr[i])
+      }
+      return res
+    }
+
+    // 2、slice 方法实现数组的深拷贝
+    var arr = [1, 2, 3, 4, 5]
+    var arr2 = arr.slice(0)
+    arr[2] = 5
+    console.log(arr)
+    console.log(arr2)
+
+    // 3、concat 方法实现数组的深拷贝
+    var arr = [1, 2, 3, 4, 5]
+    var arr2 = arr.concat()
+    arr[2] = 5
+    console.log(arr)
+    console.log(arr2)
+
+    // 4、ES6扩展运算符实现数组的深拷贝
+    var arr = [1, 2, 3, 4, 5]
+    var [...arr2] = arr
+    arr[2] = 5
+    console.log(arr)
+    console.log(arr2)
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

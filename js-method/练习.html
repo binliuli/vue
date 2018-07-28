@@ -7,37 +7,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script>
-    function isInteger(num) {
-      if (!isNaN(num) && num % 1 === 0) {
-        return true;
-      } else {
-        return false;
-      }
-
-    }
-    var a = 5.9
-    var isNum = isInteger(a);
-    console.log(isNum)
+    var arr = [1, 2, 3, 4, 5];
+    var arr2 = arr.some(function (x,index,a) {
+      console.log(x,index,a)
+      // return x < 3;
+    });
   </script>
   <style>
-    div {
-      height: 20px;
-      margin: 20px;
-    }
-
-    .div1 {
-      background: red;
-    }
-
-    .div2 {
-      background: pink;
-    }
   </style>
 </head>
 
 <body>
-  <div class="div1">margin:20px</div>
-  <div class="div2">margin:20px</div>
+
 </body>
 
 </html>
