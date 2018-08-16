@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <!-- <img src="./assets/logo.png"> -->
+    <router-link to="/router">路由守卫验证</router-link>
     <router-view/>
   </div>
 </template>

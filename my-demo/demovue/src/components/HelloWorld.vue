@@ -127,7 +127,8 @@ export default {
     },
     link() {
       // 路由跳转
-      this.$router.push("/list/2");
+      // this.$router.push("/list/2");
+      this.$router.push({ path: '/list/2', query:{type:'c'}})
     },
     // 多选框
     handleCheckAllChange(val) {

@@ -35,6 +35,7 @@ export default {
   },
   mounted() {
     console.log(this.id)
+    console.log(this.$route,111)
     /* setTimeout(() => {
       this.text.name = "父组件传给子组件的值";
     },2000);

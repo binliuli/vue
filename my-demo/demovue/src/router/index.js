@@ -48,7 +48,16 @@ let router = new Router({
         component: Heighter
       }
     ]
-  }, ],
+  }, {
+    path: '/router',
+    component: () =>
+      import ("@/components/Router"),
+    children: [{
+      path: ':id',
+      component: () =>
+        import ("@/components/RouterId")
+    }]
+  }],
 })
 
 // 路由守卫
@@ -62,7 +71,6 @@ router.beforeEach((to, from, next) => {
       // 可以和router里面一样
       next({
         path:'/login',
-
       })
     }
   */
