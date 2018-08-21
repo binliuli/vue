@@ -59,7 +59,6 @@ export default () => {
         state
       }, product) {
         console.log(state, product)
-        this.state.newData = product
         commit('increase') //commit('increase',price)
       }
     }

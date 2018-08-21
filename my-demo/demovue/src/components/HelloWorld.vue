@@ -122,7 +122,7 @@ export default {
     },
     add() {
       // 触发 action => vuex  带参数触发
-      // this.$store.commit("actionIncrease", this.fileData)
+      // this.$store.commit("increase", this.fileData)
       this.$store.dispatch("actionIncrease", this.fileData);
     },
     link() {
