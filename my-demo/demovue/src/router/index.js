@@ -22,6 +22,7 @@ let router = new Router({
 
   // },
   // fallback: true,
+  base:'/dist/',
   routes: [{
     path: '/',
     name: 'HelloWorld',

@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <!-- <div class="element">
+    <div class="element">
       <h3>element-UI组件练习</h3>
       <el-row>
         <el-button>默认按钮</el-button>
@@ -36,7 +36,7 @@
       <div class="loading" v-loading="true" element-loading-text="拼命加载中" element-loading-background="rgba(0, 0, 0, 0.8)">
 
       </div>
-    </div> -->
+    </div>
 
     <router-link to="/">跳转到详情页</router-link>
     <router-link to="/heighter">高级组件-跨级传递等</router-link>
